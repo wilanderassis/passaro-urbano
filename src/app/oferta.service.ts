@@ -20,4 +20,23 @@ export class OfertasService {
             .toPromise()
             .then((resposta: Response) => resposta.json())
     }
+
+    getOfertasPorId(id: number): Promise<Oferta> {
+        return this.http.get(`${URL_API}/ofertas?id=${id}`)
+            .toPromise()
+            .then((resposta: Response) => resposta.json()[0])
+    }
+
+    getOndeFica(id: number): Promise<string> {
+        return this.http.get(`${URL_API}/onde-fica?id=${id}`)
+            .toPromise()
+            .then((resposta: Response) => resposta.json()[0].descricao)
+    }
+
+    getComoUsar(id: number): Promise<string> {
+        return this.http.get(`${URL_API}/como-usar?id=${id}`)
+            .toPromise()
+            .then((resposta: Response) => resposta.json()[0].descricao)
+    }
+
 }
