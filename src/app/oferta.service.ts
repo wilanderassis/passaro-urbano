@@ -14,4 +14,10 @@ export class OfertasService {
             .toPromise()
             .then((resposta: Response) => resposta.json())
     }
+
+    getOfertasCategoria(categoria: string): Promise<Oferta[]> {
+        return this.http.get(`${URL_API}/ofertas?categoria=${categoria}`)
+            .toPromise()
+            .then((resposta: Response) => resposta.json())
+    }
 }

@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http'
 import localePt from "@angular/common/locales/pt"
 registerLocaleData(localePt)
 
+/* ROTAS */
+import { RouterModule } from "@angular/router";
+import { ROUTES } from "./app.routes";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
@@ -37,9 +41,10 @@ import { registerLocaleData } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
