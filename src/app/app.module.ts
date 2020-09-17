@@ -13,6 +13,9 @@ import { ROUTES } from "./app.routes";
 /* SERVICES */
 import { CarrinhoService } from "./carrinho.service";
 
+/* FORMS */
+import { ReactiveFormsModule } from "@angular/forms";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
@@ -45,7 +48,8 @@ import { registerLocaleData } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
   ],
   providers: [CarrinhoService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
