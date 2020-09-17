@@ -10,6 +10,9 @@ registerLocaleData(localePt)
 import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 
+/* SERVICES */
+import { CarrinhoService } from "./carrinho.service";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
@@ -44,7 +47,7 @@ import { registerLocaleData } from '@angular/common';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [CarrinhoService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
