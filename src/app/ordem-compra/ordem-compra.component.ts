@@ -37,6 +37,10 @@ export class OrdemCompraComponent implements OnInit {
     }
   }
 
+  limparCarrinho() {
+   this.carrinhoService.limparCarrinho()
+  }
+
   confirmarCompra() {
     if (this.formulario.status === 'INVALID') {
       this.formulario.get('endereco').markAsTouched()
@@ -53,15 +57,15 @@ export class OrdemCompraComponent implements OnInit {
       )
 
       if (this.itensCarrinho.length === 0) {
-        console.log('Seu carrinho está vazio: ', this.itensCarrinho.length)        
-      } else {       
+        console.log('Seu carrinho está vazio: ', this.itensCarrinho.length)
+      } else {
         this.ordemCompraService.finalizarCompra(pedido)
           .subscribe((idPedido: number) => {
             this.idPedidoCompra = idPedido
+            this.limparCarrinho()
           })
       }
-    }
-
+    }    
   }
 
   aumentarQuantidade(item: ItemCarrinho) {

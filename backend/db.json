@@ -186,24 +186,6 @@
     }
   ],
   "pedidos": [
-    {
-      "endereco": "asdf",
-      "numero": "asdf",
-      "complemento": "asdf",
-      "formaPagamento": "dinheiro",
-      "listaItensCarrinho": [
-        {
-          "id": 4,
-          "titulo": "Estância das águas",
-          "img": {
-            "url": "/assets/ofertas/4/img1.jpg"
-          },
-          "descricao": "Diversão garantida com piscinas, trilhas e muito mais.",
-          "valor": 31.9,
-          "quantidade": 1
-        }
-      ],
-      "id": 1
-    }
+    
   ]
 }

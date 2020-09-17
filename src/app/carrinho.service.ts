@@ -50,5 +50,9 @@ export class CarrinhoService {
         return total
     }
 
+    limparCarrinho() {
+        this.itens = []
+    }
+
 
 }
